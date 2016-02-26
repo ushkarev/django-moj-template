@@ -1,0 +1,110 @@
+{% extends 'govuk_template/base.html' %}
+{% load i18n %}
+{% load static %}
+{% load django_moj_template %}
+
+
+{% block page_title %}{{ page_title|default:_('GOV.UK - The best place to find government services and information') }}{% endblock %}
+
+
+{% block head %}
+  <!--[if gt IE 8]><!--><link href="{% static 'stylesheets/main.css' %}" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
+  <!--[if IE 6]><link href="{% static 'stylesheets/main-ie6.css' %}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 7]><link href="{% static 'stylesheets/main-ie7.css' %}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 8]><link href="{% static 'stylesheets/main-ie8.css' %}" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+{% endblock %}
+
+
+{% block cookie_message %}
+  <p>
+    {% blocktrans trimmed %}
+      GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more aboutcookies</a>
+    {% endblocktrans %}
+  </p>
+{% endblock %}
+
+{% block header_class %}{% collapsewhitespace stripped %}
+  {{ header_class }}
+  {% if proposition %}
+    with-proposition
+  {% endif %}
+{% endcollapsewhitespace %}{% endblock %}
+
+
+{% block proposition_header %}
+  {% if proposition %}
+    <div class="header-proposition">
+      <div class="content">
+        {% if proposition.links|length > 1 %}
+          <a href="#proposition-links" class="js-header-toggle menu">{% trans 'Menu' %}</a>
+        {% endif %}
+        <nav id="proposition-menu">
+          <a href="/" id="proposition-name">{{ proposition.name }}</a>
+          {% if proposition.links|length == 1 %}
+            <p id="proposition-link">
+              <a href="{{ proposition.links.0.url }}" {% if proposition.links.0.active %}class="active"{% endif %}>{{ proposition.links.0.name }}</a>
+            </p>
+          {% elif proposition.links|length > 1 %}
+            <ul id="proposition-links">
+              {% for proposition_link in proposition.links %}
+                <li><a href="{{ proposition_link.url }}" {% if proposition_link.active %}class="active"{% endif %}>{{ proposition_link.name }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+
+{% block content %}
+  <main id="content" role="main">
+
+    {% block phase_banner %}
+      {% if phase == 'alpha' or phase == 'beta' %}
+        <div class="phase-banner-{{ phase }}">
+          <p>
+            <strong class="phase-tag">
+              {% if phase == 'alpha' %}
+                {% trans 'ALPHA' %}
+              {% else %}
+                {% trans 'BETA' %}
+              {% endif %}
+            </strong>
+            <span>
+              {% blocktrans trimmed %}
+                This is a new service – your <a href="{{ feedback_url }}">feedback</a> will help us to improve it.
+              {% endblocktrans %}
+            </span>
+          </p>
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block article_content %}{% endblock %}
+  </main>
+{% endblock %}
+
+
+{% block footer_support_links %}
+  <ul>
+    {% for footer_support_link in footer_support_links %}
+      <li><a href="{{ footer_support_link.url }}">{{ footer_support_link.name }}</a></li>
+    {% endfor %}
+    <li>
+      {% blocktrans trimmed with url='https://mojdigital.blog.gov.uk/' %}
+        Built by <a href="{{ url }}"><abbr title="Ministry of Justice">MoJ</abbr> Digital</a>
+      {% endblocktrans %}
+    </li>
+  </ul>
+{% endblock %}
+
+
+{% block licence_message %}
+  <p>
+    {% blocktrans trimmed with url='https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' %}
+      All content is available under the <a href="{{ url }}" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+    {% endblocktrans %}
+  </p>
+{% endblock %}

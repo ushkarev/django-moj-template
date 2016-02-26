@@ -1,0 +1,77 @@
+{% extends 'django_moj_template/base.html' %}
+{% load django_moj_template %}
+
+{% block article_content %}
+
+  <h1 class="heading-xlarge">Page title</h1>
+
+  <h2 class="heading-large">Section title</h2>
+  <p class="lede">
+    Cras <a href="#">justo odio</a>, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+  </p>
+  <p>
+    Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+  </p>
+  <p class="font-xsmall">
+    Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </p>
+  <p>
+    Sed posuere <a href="#" rel="external">consectetur</a> est at lobortis. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+  </p>
+
+  <div class="notice">
+    <i class="icon icon-important">
+      <span class="visuallyhidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+      Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+    </strong>
+  </div>
+
+  <h2 class="heading-large">Section title</h2>
+  <p>
+    Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor.
+  </p>
+  <p><a class="button button-start" href="#" role="button">Start now</a></p>
+  <p>
+    <a href="#" class="link-back">Back</a>
+  </p>
+
+  <h2 class="heading-large">Section title</h2>
+  <ul class="list">
+    <li>Ornare Pellentesque Quam</li>
+    <li>Ornare Pellentesque Quam</li>
+    <li>Ornare Pellentesque Quam</li>
+  </ul>
+  <ul class="list list-bullet">
+    <li>Ornare Pellentesque Quam</li>
+    <li>Ornare Pellentesque Quam</li>
+    <li>Ornare Pellentesque Quam</li>
+  </ul>
+  <ol class="list list-number">
+    <li>Ornare Pellentesque Quam</li>
+    <li>Ornare Pellentesque Quam</li>
+    <li>Ornare Pellentesque Quam</li>
+  </ol>
+
+  <h2 class="heading-large">Section title</h2>
+  <div class="panel panel-border-wide">
+    <p>
+      Sed posuere consectetur est at lobortis.
+    </p>
+  </div>
+
+
+  <details>
+    <summary><span class="summary">Ornare Pellentesque Quam</span></summary>
+    <div class="panel panel-border-narrow">
+      <p>
+        Donec sed odio dui.
+      </p>
+      <p>
+        Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </p>
+    </div>
+  </details>
+
+{% endblock %}

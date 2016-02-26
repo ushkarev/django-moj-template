@@ -1,0 +1,52 @@
+# Django MoJ Template
+# Copyright (C) 2016 HM Government (Ministry of Justice Digital Services)
+# This file is distributed under the The MIT License (MIT)
+msgid ""
+msgstr ""
+"Project-Id-Version: django_moj_template\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-26 17:40+0000\n"
+"PO-Revision-Date: 2016-02-26 17:40+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: en\n"
+"X-Source-Language: en\n"
+
+#: context_processors.py:8
+msgid "Go to the GOV.UK homepage"
+msgstr "Go to the GOV.UK homepage"
+
+#: context_processors.py:9
+msgid "GOV.UK"
+msgstr "GOV.UK"
+
+#: context_processors.py:10
+msgid "Skip to main content"
+msgstr "Skip to main content"
+
+#: context_processors.py:11
+msgid "© Crown copyright"
+msgstr "© Crown copyright"
+
+#: templates/govuk_template/moj_base.html:4
+msgid "GOV.UK - The best place to find government services and information"
+msgstr "GOV.UK - The best place to find government services and information"
+
+#: templates/govuk_template/moj_base.html:9
+#, python-format
+msgid "Built by <a href=\"%(url)s\">MoJ Digital</a>"
+msgstr "Built by <a href=\"%(url)s\">MoJ Digital</a>"
+
+#: templates/govuk_template/moj_base.html:18
+#, python-format
+msgid ""
+"All content is available under the <a href=\"%(url)s\" rel=\"license\">Open "
+"Government Licence v3.0</a>, except where otherwise stated"
+msgstr ""
+"All content is available under the <a href=\"%(url)s\" rel=\"license\">Open "
+"Government Licence v3.0</a>, except where otherwise stated"
